@@ -1,0 +1,27 @@
+{
+  "name": "movie_ticket_booking_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.4.0",
+    "razorpay": "^2.8.6",
+    "sequelize": "^6.32.1",
+    "sib-api-v3-sdk": "^8.5.0",
+    "uuid": "^9.0.0"
+  }
+}

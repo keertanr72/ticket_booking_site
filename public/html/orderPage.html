@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seat Booking</title>
+    <link rel="stylesheet" type="text/css" href="../css/orderPage.css">
+</head>
+<body>
+    <h1>Seat Booking (click to confirm)</h1>
+
+    <div id="seats-container">
+        <!-- <div class="seat" id="seat1">
+            <span class="seat-id">1A</span>
+            <span class="seat-class">Economy</span>
+            <span class="seat-price">$100</span>
+        </div>
+        <div class="seat" id="seat2">
+            <span class="seat-id">2B</span>
+            <span class="seat-class">Business</span>
+            <span class="seat-price">$200</span>
+        </div> -->
+        <!-- Add more seat elements here -->
+    </div>
+
+    <div id="booking-details">
+        <h2>Booking Details</h2>
+        <ul id="booked-seats"></ul>
+        <p id="total-price">Total Price: $0</p>
+        <button id="order-button">Order Now</button>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="../javascript/orderPage.js"></script>
+</body>
+</html>
