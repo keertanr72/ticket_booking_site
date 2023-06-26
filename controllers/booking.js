@@ -1,6 +1,5 @@
 const Razorpay = require('razorpay');
 const Sib = require('sib-api-v3-sdk')
-const { v4: uuidv4 } = require('uuid')
 require('dotenv').config()
 const sequelize = require('../util/database');
 const User = require('../models/user');
@@ -13,7 +12,6 @@ exports.sendEmail = async (req, res) => {
   const apiKey = client.authentications['api-key']
   apiKey.apiKey = process.env.API_KEY
   const tranEmailApi = new Sib.TransactionalEmailsApi()
-  const idOfForgotPassword = uuidv4()
   try {
     const sender = {
       email: 'keertanr72@gmail.com'
