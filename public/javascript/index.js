@@ -9,7 +9,7 @@ const createUser = async (event) => {
     document.getElementById('signUpError').innerHTML = ''
 
     try {
-        const check = await axios.post(('http://localhost:3000/user/sign-up/check-email'), { email })
+        const check = await axios.post(('http://http://3.95.218.68:3000/user/sign-up/check-email'), { email })
     }
     catch (error) {
             document.getElementById('signUpError').innerHTML = '<p style="color: red;">This email EXISTS!!</p>'
@@ -29,7 +29,7 @@ const createUser = async (event) => {
     }
 
     try {
-        const data = await axios.post('http://localhost:3000/user/sign-up', userDetails)
+        const data = await axios.post('http://http://3.95.218.68:3000/user/sign-up', userDetails)
         if (data.status === 201) {
             alert('success')
             window.location.href = "/html/login.html"

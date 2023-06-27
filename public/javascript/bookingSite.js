@@ -21,7 +21,7 @@ async function handleFormSubmit() {
     // console.log("Selected Seats:", selectedSeats);
     try {
         await Promise.all(selectedSeats.map(async (ele) => {
-            let temp = await axios.get(`http://localhost:3000/seats/${ele.seatNumber}?class=${ele.seat_class}`);
+            let temp = await axios.get(`http://http://3.95.218.68:3000/seats/${ele.seatNumber}?class=${ele.seat_class}`);
             data.push(temp.data);
         }));
         data.forEach(ele => {
@@ -39,7 +39,7 @@ async function handleFormSubmit() {
 
 // Function to dynamically generate seats
 const loadingContents = async () => {
-    const seatData = await axios.get('http://localhost:3000/seats');
+    const seatData = await axios.get('http://http://3.95.218.68:3000/seats');
 
     // Define the number of seats
     var numberOfSeats = seatData.data.seats.count;
@@ -77,7 +77,7 @@ const loadingContents = async () => {
 loadingContents();
 
 document.getElementById('previousOrdersBtn').addEventListener('click', async () => {
-    let userData = await axios.get('http://localhost:3000/booking', { headers: { 'Authorization': token } })
+    let userData = await axios.get('http://http://3.95.218.68:3000/booking', { headers: { 'Authorization': token } })
     console.log(userData)
     let addHere = document.getElementById('oldOrderText')
     if(userData.data.orderDetails.length === 0) {
