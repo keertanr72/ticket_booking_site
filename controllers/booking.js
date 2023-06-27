@@ -77,6 +77,7 @@ exports.bookTickets = async (req, res) => {
   } catch (error) {
     await t.rollback();
     console.log(error);
+    res.json({ message: 'something went wrong!' })
   }
 };
 
@@ -108,6 +109,7 @@ exports.paymentSuccess = async (req, res, next) => {
   } catch (error) {
     await t.rollback();
     console.log(error);
+    res.json({ message: 'something went wrong!' })
   }
 };
 
@@ -123,6 +125,7 @@ exports.paymentFail = async (req, res) => {
     res.status(200).json({ message: 'payment cancelled' })
   } catch (error) {
     console.log(error)
+    res.json({ message: 'something went wrong!' })
   }
 }
 
@@ -132,5 +135,6 @@ exports.getUserOrders = async (req, res) => {
     res.status(200).json({ orderDetails })
   } catch (error) {
     console.log(error)
+    res.json({ message: 'something went wrong!' })
   }
 }
