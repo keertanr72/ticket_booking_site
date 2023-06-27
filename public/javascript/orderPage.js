@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
     orderButton.addEventListener('click', async () => {
         try {
             const token = localStorage.getItem('token')
-            const membershipData = await axios.post('http://http://3.95.218.68:3000/booking', { data }, { headers: { 'Authorization': token } })
+            const membershipData = await axios.post('http://3.95.218.68:3000/booking', { data }, { headers: { 'Authorization': token } })
             console.log(membershipData)
             const options = {
                 'key': membershipData.data.key_id,
                 'order_id': membershipData.data.order.id,
                 'handler': async (membershipData) => {
-                    const orderDetails = await axios.post('http://http://3.95.218.68:3000/booking/payment-success', {
+                    const orderDetails = await axios.post('http://3.95.218.68:3000/booking/payment-success', {
                         order_id: options.order_id,
                         payment_id: membershipData.razorpay_payment_id,
                         data
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rzp1 = new Razorpay(options)
             rzp1.open()
             rzp1.on('payment.failed', async () => {
-                await axios.put('http://http://3.95.218.68:3000/booking/payment-fail', { data }, { headers: { 'Authorization': token } })
+                await axios.put('http://3.95.218.68:3000/booking/payment-fail', { data }, { headers: { 'Authorization': token } })
                 console.log('payment failed')
             })
         } catch (error) {
